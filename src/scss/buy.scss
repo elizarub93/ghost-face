@@ -1,0 +1,152 @@
+@import "partials/params";
+@import "partials/mixins";
+
+$opacity: 0.6;
+
+.buy{
+	background: #fff;
+
+	&__content{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px;
+		width: 100%;
+	}
+
+	&__title{
+		font-size: 25px;
+		opacity: 0.8;
+		font-weight: bold;
+		margin-bottom: 25px;
+	}
+
+	&__subtitle{
+		margin-bottom: 50px;
+		opacity: $opacity;
+		font-weight: normal;
+	}
+
+	&__input-wrapper{
+		display: flex;
+		width: 1000px;
+		margin: 0 auto 50px;
+		padding: 5px;
+		border: 1px solid $buy-border-color;
+	}
+
+	&__help{
+		display: flex;
+		align-items: center;
+		width: 10%;
+		color: $buy-border-color;
+	}
+
+	&__www{
+		justify-content: center;
+	}
+
+	&__select{
+		justify-content: flex-end;
+		cursor: pointer;
+		position: relative;
+
+		&:hover{
+			& .select__dropdown{
+				opacity: 1;
+				z-index: 100;
+			}
+		}
+
+		& .select__dropdown{
+			position: absolute;
+			width: 200px;
+			background-color: #fff;
+			top: 40px;
+			right: -6px;
+			z-index: -100;
+			@include clear-list;
+			border: 1px solid $buy-border-color;
+			border-bottom: 0;
+			opacity: 0;
+			transition: 0.5 all;
+
+		}
+		& .select__list{
+			text-transform: uppercase;
+			padding: 5px 15px;
+			border-bottom: 1px solid $buy-border-color;
+		}
+	}
+
+	&__icon{
+		margin-right: 20px;
+	}
+
+	
+	&__input-block{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 80%;
+		border-left: 1px solid $buy-border-color;
+		border-right: 1px solid $buy-border-color;
+	}
+
+	&__input{
+		width: 100%;
+		border: none;
+		outline: none;
+		padding: 10px;
+	}
+
+	&__domain{
+		margin-right: 50px;
+		color: $buy-border-color;
+	}
+
+	&__table{
+		width: 850px;
+
+
+		& .table__row{
+			display: flex;
+		}
+
+		& .table__cell{
+			position: relative;
+			@include flex-center(row);
+			padding: 30px 50px;
+			width: 25%;
+			font-size: 13px;
+			color: $buy-border-color;
+
+			&:after{
+				content: '';
+				position: absolute;
+				background-color: #fff;
+				display: block;
+				height: 10px;
+				width: 10px;
+				right: -5px;
+				bottom: -5px;
+				z-index: 99;
+
+			}
+
+			&--top{
+				border-bottom: 1px solid $buy-border-color;
+				border-right: 1px solid $buy-border-color;
+			}
+			&--bottom{
+				border-right: 1px solid $buy-border-color;
+
+			}
+			&--nrb{
+				border-right: none;
+			}
+
+		}
+
+	}
+}
